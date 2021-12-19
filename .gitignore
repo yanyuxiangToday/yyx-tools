@@ -5,6 +5,7 @@ tempdel
 *.mp4
 NONLOCAL*
 ffmpeg*
+.idea
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
