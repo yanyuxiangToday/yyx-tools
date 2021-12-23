@@ -10,6 +10,7 @@
 from multiprocessing import Process
 import os
 
+
 def info(title):
     print('-' * 10)
     print(title)
@@ -20,17 +21,20 @@ def info(title):
         pass
     print(f'{title} {os.getpid()} done')
 
-if __name__ == '__main__':
+
+def main():
     p_list = []
     for i in range(3):
-        # La
-        # 启动三个多进程，其中args需是一个迭代器，按照元组格式写
         p_list.append(Process(target=info, args=(i, )))
 
-        # 进程启动
+        # Launch.
         p_list[i].start()
 
     for i in range(3):
-        # 父进程等待当前所有子进程结束方可继续执行
+        # Waiting for each sub process.
         p_list[i].join()
-    print('hello')
+    print('All process done.')
+
+
+if __name__ == '__main__':
+    main()
