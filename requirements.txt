@@ -1,5 +1,1 @@
-requests
-memory_profiler
-itchat
 pdf2docx
-py2app
